@@ -16,7 +16,7 @@ class KeyHookController < UIViewController
 
   def hookKeys
     if Device.camera.rear?
-      Device.camera.rear.picture(media_types: [:image]) do |result|
+      Device.camera.read.picture(media_types: [:image]) do |result|
         unless result[:error]
           @imageView.image = result[:original_image]
           #data = UIImageJPEGRepresentation(result[:original_image], 0.5) # 50% quality
