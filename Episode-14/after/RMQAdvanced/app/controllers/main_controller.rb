@@ -27,7 +27,7 @@ class MainController < UIViewController
     rmq(self.view).attr(contentSize: [320, rmq(:container).get.frame.size.height + 20])
   end
 
-  def capture_view(sender)
+  def capture_view(_)
     UIImageWriteToSavedPhotosAlbum(rmq.image.from_view(self.view, true), nil, nil, nil)
   end
 end
